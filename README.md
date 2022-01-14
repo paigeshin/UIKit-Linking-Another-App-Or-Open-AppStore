@@ -1,6 +1,20 @@
 ![img](./img1.png)
 
 ```swift
+  guard let url = URL(string: "ms-word://") else { return }
+  if UIApplication.shared.canOpenURL(url) {
+      // deep link
+      UIApplication.shared.open(url, options: [:], completionHandler: nil)
+  } else {
+      // upcell
+      let vc = SKStoreProductViewController()
+      // Value should app id on app store
+      vc.loadProduct(withParameters: [SKStoreProductParameterITunesItemIdentifier: NSNumber(value: 586447913)], completionBlock: nil)
+      present(vc, animated: true)
+  }
+```
+
+```swift
 //
 //  ViewController.swift
 //  SwiftDeepLink
