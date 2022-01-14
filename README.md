@@ -1,5 +1,7 @@
+# Register Schemes (to open another app. This is different from URLSchemes which handle incoming url)
 ![img](./img1.png)
 
+# Core Logic
 ```swift
   guard let url = URL(string: "ms-word://") else { return }
   if UIApplication.shared.canOpenURL(url) {
@@ -13,7 +15,7 @@
       present(vc, animated: true)
   }
 ```
-
+# Entire Code 
 ```swift
 //
 //  ViewController.swift
